@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       options:{
         jshintrc:true
       },
-    files:['*.js', 'lib/**/*.js']
+    files:['*.js', 'lib/**/*.js', 'test/**/*.js']
     },
     jscs: {
       all: {
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           config:'.jscsrc'
         },
         files: {
-          src: ['*.js', 'lib/**/*.js']
+          src: ['*.js', 'lib/**/*.js', 'test/**/*.js']
         }
       }
     }
