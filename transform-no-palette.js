@@ -2,7 +2,7 @@ var fs = require('fs');
 var transform = require('./lib/transformations.js');
 var converter = require('./lib/buffer-converter.js');
 
-var bitmap = fs.createReadStream('dog.bmp');
+var bitmap = fs.createReadStream('./bmp/dog.bmp');
 var header, bitmapData = [], bufferArray = [];
 
 bitmap.on('data', function(data) {
@@ -25,6 +25,6 @@ bitmap.on('end', function () {
 
   buffer = converter.reconstructBuffer(header, rgbArray);
 
-  fs.writeFileSync('./newDog.bmp',buffer)
+  fs.writeFileSync('./bmp/newDog.bmp',buffer)
 
 });
