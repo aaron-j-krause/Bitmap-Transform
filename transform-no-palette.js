@@ -21,7 +21,7 @@ bitmap.on('end', function () {
 
   rgbArray = converter.breakDownPixelArray(bitmapData);
 
-  rgbArray = transform.transformInverse(rgbArray);
+  rgbArray = transform.whatEven(rgbArray);
 
   buffer = converter.reconstructBuffer(header, rgbArray);
 
