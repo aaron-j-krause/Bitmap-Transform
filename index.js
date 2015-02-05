@@ -1,19 +1,20 @@
 var fs = require('fs');
 var transform = require('./lib/transformations.js');
-var converter = require('./lib/buffer-converter.js');
+var converter = require('./lib/bitmap-converter.js');
 var reader = require('./lib/bitmapHeaderReader.js');
-var parse = require('./lib/transform-palette.js');
 
-var bitmap = fs.readFileSync('./bmp/dog.bmp');
+var path = process.argv[2];
+var bitmap = fs.readFileSync(path);
 var headerInfo = reader.readHeader(bitmap);
 console.log(headerInfo);
 
 if (headerInfo.type === 'BM' && headerInfo.startOfPixels != 54) {
-  bitmap = parse.transformPalette(bitmap, transform.inverse);
+  bitmap = converter.withPalette(bitmap, transform.inverse);
 } else if (headerInfo.type === 'BM' && headerInfo.startOfPixels == 54) {
-  bitmap = converter.returnArrayAndHeader(bitmap, transform.rainbow);
+  bitmap = converter.withoutPalette(bitmap, transform.rainbowMachine);
 } else {
   throw new Error('I ain\'t even gonna fuck with this');
 }
 
-fs.writeFileSync('./bmp/newDog.bmp', bitmap);
+path = path.replace(/.bmp/, '-transformed.bmp');
+fs.writeFileSync(path, bitmap);
