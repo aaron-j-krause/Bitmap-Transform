@@ -28,3 +28,6 @@ bitmap.on('end', function () {
   fs.writeFileSync('./bmp/newDog.bmp',buffer)
 
 });
+
+
+exports = module.exports = {}
