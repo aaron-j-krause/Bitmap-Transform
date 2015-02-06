@@ -5,6 +5,7 @@ var app = require('../lib/bitmap-header-reader.js');
 describe('Header Reader Module', function() {
   describe('#readHeader()', function() {
     var header;
+
     before(function() {
       var seg1 = 'Qk1GKwAAAAAAADYEAAAoAAAAZAAAAGQAAAAB';
       var seg2 = 'AAgAAAAAABAnAAASCwAAEgsAAAABAAAAAQAA';
