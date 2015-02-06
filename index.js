@@ -12,7 +12,7 @@ console.dir(bitmap.slice(0, 54).toString('base64'));
 if (headerInfo.type === 'BM' && headerInfo.startOfPixels != 54) {
   bitmap = converter.withPalette(bitmap, transform.inverse);
 } else if (headerInfo.type === 'BM' && headerInfo.startOfPixels == 54) {
-  bitmap = converter.withoutPalette(bitmap, transform.rainbowMachine);
+  bitmap = converter.withoutPalette(bitmap, transform.rainbow);
 } else {
   throw new Error('I ain\'t even gonna fuck with this');
 }
