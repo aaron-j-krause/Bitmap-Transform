@@ -1,4 +1,4 @@
-var expect = require('chai').expect;
+gvar expect = require('chai').expect;
 var app = require('../lib/bitmap-converter.js');
 var transform = require('../lib/transformations.js');
 
