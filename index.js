@@ -7,13 +7,14 @@ var path = process.argv[2];
 var transformation = transform[process.argv[3]] || transform.inverse;
 var bitmap = fs.readFileSync(path);
 var headerInfo = reader.readHeader(bitmap);
+var HEADER_SIZE = 54;
 
 console.log(headerInfo);
 if (headerInfo.type != 'BM') {
   throw new Error('I ain\'t even gonna fuck with this');
 }
 var end = headerInfo.hasPalette ? headerInfo.startOfPixels : bitmap.length;
-var modifiable = bitmap.slice(54, end);
+var modifiable = bitmap.slice(HEADER_SIZE, end);
 
 convert.convert(modifiable, transformation);
 
