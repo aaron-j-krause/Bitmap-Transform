@@ -18,5 +18,5 @@ var modifiable = bitmap.slice(HEADER_SIZE, end);
 
 convert.convert(modifiable, transformation);
 
-path = path.replace(/.bmp/, '-transformed.bmp');
+path = path.replace(/\.bmp/, '-transformed.bmp');
 fs.writeFileSync(path, bitmap);
