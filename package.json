@@ -1,0 +1,30 @@
+{
+  "name": "Bitmap-Transform",
+  "version": "0.1.0",
+  "description": "Bitmap Transformer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaroncrows/Bitmap-Transform.git"
+  },
+  "author": "Aaron Krause",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaroncrows/Bitmap-Transform/issues"
+  },
+  "homepage": "https://github.com/aaroncrows/Bitmap-Transform",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-jscs": "^1.2.0",
+    "grunt-simple-mocha": "^0.4.0",
+    "jscs": "^1.10.0",
+    "jshint": "^2.6.0",
+    "mocha": "^2.1.0"
+  }
+}
